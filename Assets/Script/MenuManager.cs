@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
 {
     public Button btnJouer;
     public Button btnParametre;
+    public Button btnQuitter;
     public Button btnInstructions;
     public GameObject menuParametre;
     public GameObject menuInstructions;
@@ -18,6 +19,7 @@ public class MenuManager : MonoBehaviour
         btnJouer.onClick.AddListener(btnJouer_Clicked);
         btnParametre.onClick.AddListener(btnParametre_Clicked);
         btnInstructions.onClick.AddListener(btnInstructions_Clicked);
+        btnQuitter.onClick.AddListener(btnQuitter_Clicked);
     }
 
     // Update is called once per frame
@@ -42,5 +44,10 @@ public class MenuManager : MonoBehaviour
     {
         menuInstructions.SetActive(true);
         Debug.Log("Bouton instructions à été cliqué");
+    }
+    void btnQuitter_Clicked()
+    {
+        //Affiche message dans la console quand il est cliqué
+        Debug.Log("Bouton quitter à été cliqué");
     }
 }
