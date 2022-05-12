@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 86839190}
   - component: {fileID: 86839189}
   - component: {fileID: 86839193}
+  - component: {fileID: 86839194}
   m_Layer: 5
   m_Name: MenuAccueil
   m_TagString: Untagged
@@ -536,10 +537,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnJouer: {fileID: 0}
   btnParametre: {fileID: 0}
-  btnQuitter: {fileID: 0}
+  btnQuitterInstructions: {fileID: 0}
   btnInstructions: {fileID: 0}
+  btnQuitterParametre: {fileID: 0}
   menuParametre: {fileID: 0}
   menuInstructions: {fileID: 0}
+--- !u!114 &86839194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86839188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac656139f5bb0d48b08129afb8afb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnJouer: {fileID: 1710112253}
+  btnParametre: {fileID: 1451276029}
+  btnQuitterInstructions: {fileID: 413382791}
+  btnInstructions: {fileID: 16236549}
+  btnQuitterParametre: {fileID: 290538164}
+  menuParametre: {fileID: 126060455}
+  menuInstructions: {fileID: 248385289}
 --- !u!1 &108672573
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +594,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -632,7 +653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &126060456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -763,7 +784,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -822,7 +843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &248385290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1151,7 +1172,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1278,7 +1299,7 @@ GameObject:
   - component: {fileID: 413382792}
   - component: {fileID: 413382791}
   m_Layer: 5
-  m_Name: btnQuitter
+  m_Name: btnQuitterInstructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1625,7 +1646,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1866,7 +1887,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2999,7 +3020,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

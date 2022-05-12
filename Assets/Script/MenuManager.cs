@@ -9,8 +9,9 @@ public class MenuManager : MonoBehaviour
 {
     public Button btnJouer;
     public Button btnParametre;
-    public Button btnQuitter;
+    public Button btnQuitterInstructions;
     public Button btnInstructions;
+    public Button btnQuitterParametre;
     public GameObject menuParametre;
     public GameObject menuInstructions;
     // Start is called before the first frame update
@@ -19,7 +20,8 @@ public class MenuManager : MonoBehaviour
         btnJouer.onClick.AddListener(btnJouer_Clicked);
         btnParametre.onClick.AddListener(btnParametre_Clicked);
         btnInstructions.onClick.AddListener(btnInstructions_Clicked);
-        btnQuitter.onClick.AddListener(btnQuitter_Clicked);
+        btnQuitterInstructions.onClick.AddListener(btnQuitterInstructions_Clicked);
+        btnQuitterParametre.onClick.AddListener(btnQuitterParametre_Clicked);
     }
 
     // Update is called once per frame
@@ -29,6 +31,8 @@ public class MenuManager : MonoBehaviour
     }
     void btnJouer_Clicked()
     {
+        //charge la scene Main
+        SceneManager.LoadScene("Main");
         //Affiche message dans la console quand il est cliqué
         Debug.Log("Bouton jouer à été cliqué");
     }
@@ -45,8 +49,17 @@ public class MenuManager : MonoBehaviour
         menuInstructions.SetActive(true);
         Debug.Log("Bouton instructions à été cliqué");
     }
-    void btnQuitter_Clicked()
+    void btnQuitterInstructions_Clicked()
     {
+        //fermer le menu instructions
+        menuInstructions.SetActive(false);
+        //Affiche message dans la console quand il est cliqué
+        Debug.Log("Bouton quitter à été cliqué");
+    }
+    void btnQuitterParametre_Clicked()
+    {
+        // fermer le menuParametre
+        menuParametre.SetActive(false);
         //Affiche message dans la console quand il est cliqué
         Debug.Log("Bouton quitter à été cliqué");
     }
