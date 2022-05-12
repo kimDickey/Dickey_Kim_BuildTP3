@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +13,7 @@ public class MenuManager : MonoBehaviour
     public Button btnQuitterParametre;
     public GameObject menuParametre;
     public GameObject menuInstructions;
-    // Start is called before the first frame update
+ 
     void Start()
     {
         btnJouer.onClick.AddListener(btnJouer_Clicked);
@@ -24,11 +23,7 @@ public class MenuManager : MonoBehaviour
         btnQuitterParametre.onClick.AddListener(btnQuitterParametre_Clicked);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
     void btnJouer_Clicked()
     {
         //charge la scene Main
