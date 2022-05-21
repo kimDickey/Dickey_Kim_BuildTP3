@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+
         // debuter le timer
         timerDebut = timerDebut + Time.deltaTime;
         TimeSpan timer = TimeSpan.FromSeconds(timerDebut);
@@ -49,6 +50,13 @@ public class UIManager : MonoBehaviour
         txtTime.text = timer.ToString(@"mm\:ss\:ff");
         Debug.Log(timer.ToString(@"mm\:ss\:ff"));
         txtPointDeVie.text = nbVie.ToString();
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            // ouvrir le menuPause
+            menuPause.SetActive(true);
+            isPaused = !isPaused;
+            PauseTime();
+        }
     }
     void PauseTime()
     {
@@ -63,6 +71,8 @@ public class UIManager : MonoBehaviour
         // reprend la partie si le temps n'est plus en pause
         Time.timeScale = 1f;
         isPaused = false;
+        // fait disparaite le menuPause
+        menuPause.SetActive(false);
 
     }
 
@@ -87,23 +97,23 @@ public class UIManager : MonoBehaviour
     }
     void btnPause_Clicked()
     {
-        // fermer le menuParametre
+        // ouvrir le menuPause
         menuPause.SetActive(true);
         //Affiche message dans la console quand il est cliqué
         Debug.Log("Bouton pause a été cliqué");
     }
     void btnQuitterMenu_Clicked()
     {
-        // fermer le menuParametre
+        // fermer le menuPause
         menuPause.SetActive(false);
         //Affiche message dans la console quand il est cliqué
-        Debug.Log("Bouton quitter à été cliqué");
+        Debug.Log("Bouton quitter menu à été cliqué");
     }
     void btnQuitterPartie_Clicked()
     {
-        //charge la scene Main
-        SceneManager.LoadScene("MenuAccueil");
+        //charge la scene MenuAccueil
+        SceneManager.LoadScene("Menu Accueil");
         //Affiche message dans la console quand il est cliqué
-        Debug.Log("Bouton quitter à été cliqué");
+        Debug.Log("Bouton quitter  partie à été cliqué");
     }
 }
