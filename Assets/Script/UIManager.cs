@@ -9,24 +9,27 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;
     public Text txtTime;
-    public bool isGameOver { get; private set; } = false;
+    
     
     float timerDebut;
 
-    public GameObject txtGameOver;
+    
     public Button btnPause;
     public Button btnReprendrePartie;
     public Button btnQuitterPartie;
     public Button btnQuitterMenu;
     public GameObject menuPause;
-    public Text txtPointDeVie;
+    public GameObject txtVictoire;
+    public GameObject MenuVictoire;
+    //public Text txtPointDeVie;
     public bool isPaused = false;
 
-    int nbVie = 5;
+    int nbVie;
     public static bool uiIsOpen;
 
     void Start()
     {
+        //nbVie = 5;
         instance = this;
         // temps du timer départ
         timerDebut = 0;
@@ -49,7 +52,7 @@ public class UIManager : MonoBehaviour
         // calculer le temps en minutes:secondes
         txtTime.text = timer.ToString(@"mm\:ss\:ff");
         Debug.Log(timer.ToString(@"mm\:ss\:ff"));
-        txtPointDeVie.text = nbVie.ToString();
+        //txtPointDeVie.text = nbVie.ToString();
         if (Input.GetKeyDown(KeyCode.P))
         {
             // ouvrir le menuPause
@@ -76,25 +79,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void PointDeViePerdu()
-    {
-        // point de vie
-        nbVie -= 1;
-
-        // si le nombre de point est égale 0 la partie est terminer
-        if (nbVie == 0)
-        {
-            GameOver();
-        }
-
-    }
-    // Fin de la partie
-    public void GameOver()
-    {
-        isGameOver = true;
-        txtGameOver.SetActive(true);
-        Time.timeScale = 0f;
-    }
+ 
     void btnPause_Clicked()
     {
         // ouvrir le menuPause

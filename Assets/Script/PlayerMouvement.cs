@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerMouvement : MonoBehaviour
 {
-    public float walkingSpeed = 1.5f;
-    public float runningSpeed = 5f;
+    public float walkingSpeed = 5f;
+    public float runningSpeed = 7f;
     private float animationSpeed = 1f;
     private float lerpspeed = 0.08f;
-    float speed = 0.1f;
+    float speed = 7f;
 
     public float  jumpHeight =1f;
    
