@@ -543,6 +543,7 @@ MonoBehaviour:
   btnQuitterParametre: {fileID: 290538164}
   menuParametre: {fileID: 126060455}
   menuInstructions: {fileID: 248385289}
+  Fond: {fileID: 449601657}
 --- !u!1 &108672573
 GameObject:
   m_ObjectHideFlags: 0

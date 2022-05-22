@@ -4,36 +4,94 @@ using UnityEngine;
 
 public class PlayerMouvement : MonoBehaviour
 {
+    public float walkingSpeed = 1.5f;
+    public float runningSpeed = 5f;
+    private float animationSpeed = 1f;
+    private float lerpspeed = 0.08f;
+    float speed = 0.1f;
 
-    private bool turnLeft, turnRight, jump;
-    public float speed = 7.0f;
-    private CharacterController myCharacterController;
+    public float  jumpHeight =1f;
+   
+
+    // Transform de la position des pieds
+    public Transform feetPosition;
+
+    private float inputVertical;
+    private float inputHorizontal;
+
+    private Vector3 moveDirection;
+
+    private Rigidbody rb;
+
+    private bool isGrounded = true;
+
+    private Animator animatorPlayer;
+
+    bool isMoving;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        myCharacterController = GetComponent<CharacterController>();
+        // assignrt l'animator
+        animatorPlayer = GetComponent<Animator>();
+        //Assigner le rigidbody
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // pour aller à gauche
-        turnLeft = Input.GetKeyDown(KeyCode.A);
-        // pour aller à droite
-        turnRight = Input.GetKeyDown(KeyCode.D);
+        // Vérifier si l'on touche le sol
+        isGrounded = Physics.CheckSphere(feetPosition.position, 0.15f, 1, QueryTriggerInteraction.Ignore);
+        // Vérifier les inputs du joueur
+        // Vertical (W, S et Joystick avant/arrière)
+        inputVertical = Input.GetAxis("Vertical");
+        // Horizontal (A, D et Joystick gauche/droite)
+        inputHorizontal = Input.GetAxis("Horizontal");
+        
 
-        if (turnLeft)
-            transform.Rotate(new Vector3(0f, -90f, 0f));
-        else if (turnRight)
-            transform.Rotate(new Vector3(0f, 90f, 0f));
+        isMoving = Mathf.Abs(inputHorizontal) + Mathf.Abs(inputVertical) > 0f;
 
-        myCharacterController.SimpleMove(new Vector3(0f, 0f, 0f));
-        myCharacterController.Move(transform.forward * speed * Time.deltaTime);
+        
+        // animation
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            animationSpeed = Mathf.Lerp(animationSpeed, 2f, lerpspeed);
 
-        // permet au joueur de sauter
-        jump = Input.GetKeyDown(KeyCode.Space);
-   
-       
+            speed = Mathf.Lerp(speed, runningSpeed, lerpspeed);
+        }
+        // marcher
+        else
+        {
+
+            animationSpeed = Mathf.Lerp(animationSpeed, 1f, lerpspeed);
+            speed = Mathf.Lerp(speed, walkingSpeed, lerpspeed);
+
+
+        }
+        // la fluiditer des mouvements dans les animations
+        animatorPlayer.SetFloat("Vertical", inputVertical * animationSpeed);
+        animatorPlayer.SetFloat("Horizontal", inputHorizontal * animationSpeed);
+        // Vecteur de mouvements (Avant/arrière + Gauche/Droite)
+        moveDirection = transform.forward * inputVertical + transform.right * inputHorizontal;
+        //Sauter
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        {
+            animatorPlayer.SetTrigger("Jump");
+            rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+        }
+
+
+
+    }
+
+
+
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
     }
 }

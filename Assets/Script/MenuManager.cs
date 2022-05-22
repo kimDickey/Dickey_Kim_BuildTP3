@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     public Button btnQuitterParametre;
     public GameObject menuParametre;
     public GameObject menuInstructions;
+    public GameObject Fond;
  
     void Start()
     {
@@ -28,6 +29,7 @@ public class MenuManager : MonoBehaviour
     {
         //charge la scene Main
         SceneManager.LoadScene("Main");
+        Fond.SetActive(false);
         //Affiche message dans la console quand il est cliqué
         Debug.Log("Bouton jouer à été cliqué");
     }
