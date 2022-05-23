@@ -9,7 +9,8 @@ public class PlayerMouvement : MonoBehaviour
     private float animationSpeed = 1f;
     private float lerpspeed = 0.08f;
     float speed = 7f;
-
+    public AudioSource crisSaut;
+    
     public float  jumpHeight =1f;
    
 
@@ -31,6 +32,10 @@ public class PlayerMouvement : MonoBehaviour
 
 
 
+    private void Awake()
+    {
+        crisSaut = GetComponent<AudioSource>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +84,7 @@ public class PlayerMouvement : MonoBehaviour
         //Sauter
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
+            crisSaut.Play();
             animatorPlayer.SetTrigger("Jump");
             rb.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y), ForceMode.VelocityChange);
         }

@@ -19,17 +19,16 @@ public class UIManager : MonoBehaviour
     public Button btnQuitterPartie;
     public Button btnQuitterMenu;
     public GameObject menuPause;
-    public GameObject txtVictoire;
-    public GameObject MenuVictoire;
+    
+    
     //public Text txtPointDeVie;
     public bool isPaused = false;
 
-    int nbVie;
+    
     public static bool uiIsOpen;
 
     void Start()
     {
-        //nbVie = 5;
         instance = this;
         // temps du timer départ
         timerDebut = 0;
@@ -101,4 +100,5 @@ public class UIManager : MonoBehaviour
         //Affiche message dans la console quand il est cliqué
         Debug.Log("Bouton quitter  partie à été cliqué");
     }
+
 }

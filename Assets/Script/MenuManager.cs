@@ -30,6 +30,7 @@ public class MenuManager : MonoBehaviour
         //charge la scene Main
         SceneManager.LoadScene("Main");
         Fond.SetActive(false);
+        Time.timeScale = 1f;
         //Affiche message dans la console quand il est cliqué
         Debug.Log("Bouton jouer à été cliqué");
     }

@@ -75,7 +75,7 @@ public class PointDeVie : MonoBehaviour
             GameOver();
             
         }
-        if (feetPosition.position.y <= 534f)
+        if (534f <= feetPosition.position.z)
         {
             Victoire();
 
