@@ -29,6 +29,9 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        #if !UNITY_EDITOR && UNITY_WEBGL
+        UnityEngine.WebGLInput.captureAllKeyboardInput = false;
+        #endif
         instance = this;
         // temps du timer départ
         timerDebut = 0;

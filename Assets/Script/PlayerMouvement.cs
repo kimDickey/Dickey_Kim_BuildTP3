@@ -39,6 +39,8 @@ public class PlayerMouvement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
+
         // assignrt l'animator
         animatorPlayer = GetComponent<Animator>();
         //Assigner le rigidbody

@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour
  
     void Start()
     {
+        #if !UNITY_EDITOR && UNITY_WEBGL
+        UnityEngine.WebGLInput.captureAllKeyboardInput = false;
+        #endif
         btnJouer.onClick.AddListener(btnJouer_Clicked);
         btnParametre.onClick.AddListener(btnParametre_Clicked);
         btnInstructions.onClick.AddListener(btnInstructions_Clicked);

@@ -284,11 +284,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Instructions\n\nPour se d\xE9placer on utilise les touches W,S,A,D.\nPour
-    mettre le jeu en pause appuyer sur P.\nPour sauter appuyer sur la barre d'espace.\nDans
-    ce jeu, il faut \xE9viter les objets et ne pas tomber dans les trous. Il faut
-    survivre le plus longtemps possible. Vous disposez de cinq vies. Une fois que
-    ne vous disposiez plus aucun point de vie vous mourez."
+  m_Text: "Instructions\n\nPour se d\xE9placer on utilise les touches W,S,A,D.\nAppuyer
+    sur shift pour courir.\nPour mettre le jeu en pause appuyer sur P.\nPour sauter
+    appuyer sur la barre d'espace.\nDans ce jeu, il faut \xE9viter les objets et
+    ne pas tomber dans les trous. Il faut survivre le plus longtemps possible. Vous
+    disposez de cinq vies. Une fois que ne vous disposiez plus aucun point de vie
+    vous mourez."
 --- !u!222 &10415182
 CanvasRenderer:
   m_ObjectHideFlags: 0
