@@ -29,7 +29,7 @@ public class PointDeVie : MonoBehaviour
 
    
 
-
+    // PROF: Le joueur ne devrait pas directement affecter le contenu du UI. Tu avais un UIManager, ce devrait être lui qui le fait. Ton joueur devrait envoyer l'information au UIManager
     public void OnCollisionEnter(Collision collision) 
     { 
         // si le joueur entre en collison avec les obstacles

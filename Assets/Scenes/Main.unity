@@ -4047,7 +4047,7 @@ MonoBehaviour:
   target: {fileID: 1963391047}
   trailDistance: 5
   heightOffset: 3
-  cameraDelay: 0.02
+  cameraDelay: 0.075
 --- !u!114 &362777062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18180,8 +18180,8 @@ Transform:
   - {fileID: 1276756975}
   - {fileID: 75182948}
   - {fileID: 1366384973}
-  - {fileID: 402239504}
   - {fileID: 821932784}
+  - {fileID: 402239504}
   - {fileID: 1190673943}
   - {fileID: 1962436287}
   - {fileID: 2059360495}

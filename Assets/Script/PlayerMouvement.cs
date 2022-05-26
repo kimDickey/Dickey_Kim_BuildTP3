@@ -30,8 +30,6 @@ public class PlayerMouvement : MonoBehaviour
 
     bool isMoving;
 
-
-
     private void Awake()
     {
         crisSaut = GetComponent<AudioSource>();
